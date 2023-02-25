@@ -1,0 +1,26 @@
+Alias name: cozycat.cc
+Creation date: Feb 24, 2023
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Richard Lemieux, OU=Unknown, O=CozyCat, L=Allen, ST=TX, C=US
+Issuer: CN=Richard Lemieux, OU=Unknown, O=CozyCat, L=Allen, ST=TX, C=US
+Serial number: c5ceb0c79012f30d
+Valid from: Fri Feb 24 23:20:39 CST 2023 until: Fri May 26 00:20:39 CDT 2023
+Certificate fingerprints:
+	 SHA1: 4C:6A:65:8B:AB:40:E5:A7:4C:2C:8F:42:46:50:DC:DD:91:1D:3E:6D
+	 SHA256: 41:AC:5C:1B:C6:D7:AB:79:64:9B:E9:57:65:D0:06:D9:B0:A7:69:B7:77:3B:75:DF:83:FF:4B:FB:C3:28:05:DB
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 31 10 3B 16 C5 3D C7 C2   99 54 24 34 01 05 3D 25  1.;..=...T$4..=%
+0010: 17 C8 87 DF                                        ....
+]
+]
+

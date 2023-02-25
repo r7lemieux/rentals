@@ -7,9 +7,12 @@
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: hsl(209, 36%, 86%);
 	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
+	--color-theme-1: #255351;
+	--color-theme-1-rev: #FFFF55;
+	--color-theme-2: #307090;
 	--color-text: rgba(0, 0, 0, 0.7);
+	--color-text-rev: #FFF5F0;
+	--color-focus-rev: #FFB9A6;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
@@ -31,7 +34,10 @@ body {
 }
 
 h1,
-h2,
+
+h1,h2,h3 {
+	color: var(--heading-color);
+}
 p {
 	font-weight: 400;
 }

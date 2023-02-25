@@ -1,5 +1,13 @@
 <script>
-	import Counter from './Counter.svelte';
+	import Login from "../components/login/Login.svelte";
+	import {auth} from "../config/firebase.config.js";
+
+	const user = auth.currentUser;
+	if (user) {
+		// User is signed in.
+	} else {
+		// No user is signed in.
+	}
 </script>
 
 <svelte:head>
@@ -16,11 +24,10 @@
 		to your new<br />SvelteKit app
 	</h1>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+	{#if !user}
+		<Login/>
+	{/if}
 
-	<Counter />
 </section>
 
 <style>
