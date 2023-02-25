@@ -4,15 +4,17 @@
   // import {initializeApp} from 'firebase/app'
   // import {getFirestore, collection, getDocs} from 'firebase/firestore/lite'
   import firebase from 'firebase/compat/app'
-  import * as firebaseui from 'firebaseui'
   import 'firebaseui/dist/firebaseui.css'
   import {onMount} from 'svelte'
   import {config} from '../../config/config'
+  import { browser } from '$app/environment'
 
   // const app = initializeApp(firebaseConfig)
   // const db = getFirestore(app)
   // const auth = getAuth({})
   onMount(async () => {
+    const firebaseui = await import("firebaseui");
+
     let uiConfig = {
       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
         // User successfully signed in.
@@ -37,7 +39,9 @@
       //tosUrl: 'http://localhost:5173/about',
       // Privacy policy url/callback.
       privacyPolicyUrl: function () {
-        window.location.assign('<your-privacy-policy-url>')
+        if (browser) {
+          window.location.assign('<your-privacy-policy-url>')
+        }
       }
     }
 
