@@ -4,7 +4,7 @@ import {getFirestore} from "firebase/firestore/lite";
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBD5fbuykKm0AZw7qtN_bpXW0fdEsPFbFw',
-    authDomain: 'richard-88330.firebaseapp.com',
+    authDomain: 'cozycat.cc', // 'richard-88330.firebaseapp.com',
     projectId: 'richard-88330',
     storageBucket: 'richard-88330.appspot.com',
     messagingSenderId: '921803178362',
