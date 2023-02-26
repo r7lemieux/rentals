@@ -4,7 +4,7 @@ import {getFirestore} from "firebase/firestore/lite";
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBD5fbuykKm0AZw7qtN_bpXW0fdEsPFbFw',
-    authDomain: 'googleauth.cozycat.cc', //'richard-88330.firebaseapp.com',
+    authDomain: 'auth.cozycat.cc', //'richard-88330.firebaseapp.com',
     projectId: 'richard-88330',
     storageBucket: 'richard-88330.appspot.com',
     messagingSenderId: '921803178362',
@@ -18,10 +18,7 @@ const db = getFirestore(app)
 
 export {app, auth, db}
 
-
-
 /*
-
 export const initFirebase = () => {
   // https://github.com/vitejs/vite/issues/2579  does not work
   // https://github.com/firebase/firebase-js-sdk/issues/4846
