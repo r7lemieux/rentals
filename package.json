@@ -1,6 +1,6 @@
 {
 	"name": "rentals",
-	"licence": "private",
+	"licence": "UNLICENSED",
 	"version": "0.0.1",
 	"scripts": {
 		"emu": "firebase emulators:start --project richard",
