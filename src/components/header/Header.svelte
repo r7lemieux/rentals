@@ -3,13 +3,22 @@
   import logo from '$lib/images/svelte-logo.svg'
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import RiUserUser3Fill from 'svelte-icons-pack/ri/RiUserUser3Fill'
-  import {auth} from "../config/firebase.config.js";
+  import {auth} from "../../config/firebase.config.js";
+  import Login from "../login/Login.svelte";
+
+  const user = auth.currentUser;
 
   const logout = () => {
     auth.signOut()
       .then(() => alert('OUT!'))
       .catch(error => alert('Fail to logout ' + error.message))
   }
+
+  let showLoginModal = false
+  const login = () => {
+    showLoginModal = true
+  }
+
 </script>
 <header>
   <div class="corner">
@@ -31,11 +40,16 @@
     </ul>
   </nav>
   <div class="corner">
-      <button on:click={logout} >log out</button>
+    {#if !user}
+      <button on:click={logout}>log out</button>
+    {:else}
+      <button on:click={login}>log in</button>
+    {/if}
     <a href="https://github.com/sveltejs/kit">
       <Icon class="header-icon" src={RiUserUser3Fill}/>
     </a>
   </div>
+<!--  <div id="loginModal" class="modal" style-=""><Login/></div>-->
 </header>
 <style lang="sass">
   header

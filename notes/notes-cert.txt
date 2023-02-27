@@ -24,3 +24,4 @@ KeyIdentifier [
 ]
 ]
 
+https://stackoverflow.com/questions/41736460/exception-this-browser-is-not-supported-or-3rd-party-cookies-and-data-may-be-di
