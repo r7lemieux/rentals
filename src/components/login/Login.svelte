@@ -7,20 +7,32 @@
   import 'firebaseui/dist/firebaseui.css'
   import {onMount} from 'svelte'
   import {config} from '../../config/config'
-  import { browser } from '$app/environment'
+  import {browser} from '$app/environment'
+  import {debug} from "svelte/internal";
+  import {user} from "../../stores/auth.store";
+  import {auth} from "../../config/firebase.config.js";
 
   // const app = initializeApp(firebaseConfig)
   // const db = getFirestore(app)
   // const auth = getAuth({})
+  const callback = (res) => {
+    console.log(`==>Login.svelte:17 richard-88330.firebaseapp.com`, res)
+  }
+  export let loggedin = false
   onMount(async () => {
     const firebaseui = await import("firebaseui");
 
     let uiConfig = {
-      signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-        // User successfully signed in.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-        return false;
+      callbacks: {
+        signInSuccessWithAuthResult: (authResult, redirectUrl) => {
+          // User successfully signed in.
+          // Return type determines whether we continue the redirect automatically
+          // or whether we leave that to developer to handle.
+          console.log(`==>Login.svelte:30 firebaseui loggedin `, loggedin )
+          console.log(`==>Login.svelte:31 firebaseui authResult `, authResult.user)
+          user.set(authResult.user)
+          return false
+        }
       },
       signInSuccessUrl: config.signInSuccessUrl,
       signInOptions: [
@@ -35,8 +47,7 @@
       // tosUrl and privacyPolicyUrl accept either url string or a callback
       // function.
       // Terms of service url/callback.
-      tosUrl: 'https://src.ca',
-      //tosUrl: 'http://localhost:5173/about',
+      tosUrl: 'http://localhost:5173/about',
       // Privacy policy url/callback.
       privacyPolicyUrl: function () {
         if (browser) {
@@ -46,7 +57,7 @@
     }
 
     // Initialize the FirebaseUI Widget using Firebase.
-    let ui = new firebaseui.auth.AuthUI(firebase.auth())
+    let ui = new firebaseui.auth.AuthUI(auth)
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig)
 

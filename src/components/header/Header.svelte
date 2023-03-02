@@ -5,12 +5,14 @@
   import RiUserUser3Fill from 'svelte-icons-pack/ri/RiUserUser3Fill'
   import {auth} from "../../config/firebase.config.js";
   import Login from "../login/Login.svelte";
-
-  const user = auth.currentUser;
+  import {user} from "../../stores/auth.store";
 
   const logout = () => {
     auth.signOut()
-      .then(() => alert('OUT!'))
+      .then(() => {
+        console.log(`==>Header.svelte:15 logged out`)
+        user.set(null)
+      })
       .catch(error => alert('Fail to logout ' + error.message))
   }
 
@@ -40,10 +42,10 @@
     </ul>
   </nav>
   <div class="corner">
-    {#if !user}
-      <button on:click={logout}>log out</button>
-    {:else}
+    {#if !$user}
       <button on:click={login}>log in</button>
+    {:else}
+      <button on:click={logout}>log out</button>
     {/if}
     <a href="https://github.com/sveltejs/kit">
       <Icon class="header-icon" src={RiUserUser3Fill}/>
