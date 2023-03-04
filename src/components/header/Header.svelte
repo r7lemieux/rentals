@@ -20,7 +20,7 @@
       })
       .catch(error => alert('Fail to logout ' + error.message))
   }
-
+  const goToProfile = () => { alert ('Profile')}
   let showLoginModal = false
   const login = () => {
     showLoginModal = true
@@ -52,7 +52,7 @@
     {:else}
       <button on:click={logout}>log out</button>
     {/if}
-    <div style="min-width: 100px">
+    <div style="">
       <Button on:click={() => menu.setOpen(true)}>
         <Label>
         <Button> <Icon class="header-icon" src={RiUserUser3Fill}/></Button>
@@ -60,18 +60,12 @@
       </Button>
       <Menu bind:this={menu}>
         <List>
-          <Item on:SMUI:action={() => (clicked = 'Cut')}>
-            <Text>Cut</Text>
-          </Item>
-          <Item on:SMUI:action={() => (clicked = 'Copy')}>
-            <Text>Copy</Text>
-          </Item>
-          <Item on:SMUI:action={() => (clicked = 'Paste')}>
-            <Text>Paste</Text>
+          <Item on:SMUI:action={goToProfile}>
+            <Text>Profile</Text>
           </Item>
           <Separator />
-          <Item on:SMUI:action={() => (clicked = 'Delete')}>
-            <Text>Delete</Text>
+          <Item on:SMUI:action={logout}>
+            <Text>Logout</Text>
           </Item>
         </List>
       </Menu>

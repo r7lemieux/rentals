@@ -18,17 +18,14 @@
   const callback = (res) => {
     console.log(`==>Login.svelte:17 richard-88330.firebaseapp.com`, res)
   }
-  export let loggedin = false
   onMount(async () => {
     const firebaseui = await import("firebaseui");
 
     let uiConfig = {
       callbacks: {
         signInSuccessWithAuthResult: (authResult, redirectUrl) => {
-          // User successfully signed in.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.
-          console.log(`==>Login.svelte:30 firebaseui loggedin `, loggedin )
           console.log(`==>Login.svelte:31 firebaseui authResult `, authResult.user)
           user.set(authResult.user)
           return false

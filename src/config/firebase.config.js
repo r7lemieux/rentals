@@ -1,9 +1,10 @@
 import firebase from 'firebase/compat/app';
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore/lite";
+import { user } from '../stores/auth.store';
 const firebaseConfig = {
     apiKey: 'AIzaSyBD5fbuykKm0AZw7qtN_bpXW0fdEsPFbFw',
-    authDomain: 'auth.cozycat.cc',
+    authDomain: 'google.cozycat.cc',
     projectId: 'richard-88330',
     storageBucket: 'richard-88330.appspot.com',
     messagingSenderId: '921803178362',

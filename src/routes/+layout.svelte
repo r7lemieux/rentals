@@ -1,6 +1,14 @@
 <script>
 	import Header from '../components/header/Header.svelte';
 	import './styles.sass';
+	// import {beforeUpdate} from "svelte";
+	// import {user} from "../stores/auth.store.js";
+	// import {auth} from "../config/firebase.config.js";
+	// import {beforeNavigate} from "$app/navigation";
+	//
+	// beforeNavigate(() => {
+	// 	user.set(auth.currentUser)
+	// })
 </script>
 
 <div class="app">

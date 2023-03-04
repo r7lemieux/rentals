@@ -1,10 +1,12 @@
 import firebase from 'firebase/compat/app'
 import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore/lite";
+import {user} from '../stores/auth.store'
 
 const firebaseConfig = {
+
     apiKey: 'AIzaSyBD5fbuykKm0AZw7qtN_bpXW0fdEsPFbFw',
-    authDomain: 'auth.cozycat.cc', //'richard-88330.firebaseapp.com',
+    authDomain: 'google.cozycat.cc', //'richard-88330.firebaseapp.com',
     projectId: 'richard-88330',
     storageBucket: 'richard-88330.appspot.com',
     messagingSenderId: '921803178362',
@@ -15,8 +17,7 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const db = getFirestore(app)
-
-export {app, auth, db}
+export {app, auth, db }
 
 /*
 export const initFirebase = () => {
